@@ -31,7 +31,7 @@ class UsersAdapter internal constructor(var context: Context) : RecyclerView.Ada
             Gender.FEMALE -> context.getDrawable(R.drawable.ic_female)
         })
 
-        viewHolder.view.setOnClickListener { (context as UsersListActivity).onItemClick(position) }
+        viewHolder.view.setOnClickListener { (context as UsersListActivity).onItemClick(0) }
 
     }
 

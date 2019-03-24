@@ -7,7 +7,7 @@ object CalculationsManager {
 
     //    Calculates the BMR
     fun basalMetabolicRate(user: User): Double {
-        val bmr = (10 * user.weight) + (6.25 * user.height) - (5 * user.age)
+        val bmr = (10 * user.weight) + (6.25 * user.height) + (5 * user.age)
         return when (user.gender) {
             Gender.MALE -> bmr + 5
             Gender.FEMALE -> bmr - 161
@@ -33,7 +33,7 @@ object CalculationsManager {
 
     //    Calculates the BMI = kg/m^2
     fun bodyMassIndex(user: User): Double {
-        return user.weight / (user.heightInM * user.heightInM)
+        return user.weight / (user.height * user.height)
     }
 
     fun bmiString(user: User): String {
